@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:nsutx/pages/pagescontainer.dart';
 import 'package:nsutx/initialpages/register.dart';
+import 'package:nsutx/widgets/sidebar.dart';
 import 'package:sidebarx/sidebarx.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
@@ -22,6 +23,7 @@ class mainhome extends StatefulWidget {
 class _mainhomeState extends State<mainhome>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final divider = Divider(color: Colors.white.withOpacity(0.3), height: 1);
   final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
   @override
@@ -98,8 +100,8 @@ class _mainhomeState extends State<mainhome>
       //     onPressed: () {
       //       Navigator.push(
       //           context,
-      //           MaterialPageRoute(
-      //               builder: (context) => const MyRegister()));
+      // MaterialPageRoute(
+      //     builder: (context) => const MyRegister()));
       //       fabKey.currentState!.close();
       //     },
       //     shape: const CircleBorder(),
@@ -183,15 +185,19 @@ class _mainhomeState extends State<mainhome>
       // ),
 
       extendBodyBehindAppBar: true,
+      drawer: Sidebar(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        // leading: Padding(
+        leading: Builder(
+        builder: (context) => IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),),
+        // Padding(
         //   padding: const EdgeInsets.only(left: 8.0),
         //   child: IconButton(
-        //     onPressed: () {
-        //       Navigator.of(context).pop();
-        //     },
+        //     onPressed: () => _scaffoldKey.currentState?.openDrawer(),
         //     icon: const Icon(
         //       Icons.arrow_back,
         //       color: Colors.black,
@@ -217,68 +223,6 @@ class _mainhomeState extends State<mainhome>
               },
             ),
           ),
-        ],
-      ),
-
-      drawer: SidebarX(
-        theme: SidebarXTheme(
-          margin: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.45),
-            borderRadius: BorderRadius.circular(20),
-          ),
-          textStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
-          selectedTextStyle: const TextStyle(color: Colors.white),
-          itemTextPadding: const EdgeInsets.only(left: 30),
-          selectedItemTextPadding: const EdgeInsets.only(left: 30),
-          itemDecoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.black.withOpacity(0.45)),
-          ),
-          selectedItemDecoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: Colors.yellow.withOpacity(0.37),
-            ),
-            gradient: LinearGradient(
-              colors: [Colors.blue.withOpacity(0.45), Colors.white],
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.28),
-                blurRadius: 30,
-              )
-            ],
-          ),
-          iconTheme: IconThemeData(
-            color: Colors.white.withOpacity(0.7),
-            size: 20,
-          ),
-          selectedIconTheme: const IconThemeData(
-            color: Colors.white,
-            size: 20,
-          ),
-        ),
-        extendedTheme: SidebarXTheme(
-          width: 200,
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.45),
-          ),
-        ),
-        footerDivider: divider,
-        headerBuilder: (context, extended) {
-          return SizedBox(
-            height: 100,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset('assets/images/avatar.png'),
-            ),
-          );
-        },
-        controller: SidebarXController(selectedIndex: 0, extended: true),
-        items: const [
-          SidebarXItem(icon: Icons.home, label: 'Home'),
-          SidebarXItem(icon: Icons.search, label: 'Search'),
         ],
       ),
 
