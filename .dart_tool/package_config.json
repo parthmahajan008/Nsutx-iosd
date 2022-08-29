@@ -122,6 +122,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "sidebarx",
+      "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/sidebarx-0.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/parthmahajan/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -182,7 +188,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-28T17:40:12.827018Z",
+  "generated": "2022-08-29T11:18:24.168332Z",
   "generator": "pub",
   "generatorVersion": "2.17.6"
 }

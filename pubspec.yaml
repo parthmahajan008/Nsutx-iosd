@@ -37,6 +37,7 @@ dependencies:
   fluttertoast: ^8.0.9
   tab_indicator_styler: ^2.0.0
   fab_circular_menu: ^1.0.2
+  sidebarx: ^0.10.0
   
 
 dev_dependencies:
