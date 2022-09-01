@@ -29,7 +29,10 @@ class Sidebar extends StatelessWidget {
             color: Colors.yellow.withOpacity(0.37),
           ),
           gradient: LinearGradient(
-            colors: [Colors.pink, Colors.pinkAccent.withOpacity(0.6)],
+            colors: [
+              Color.fromARGB(255, 52, 83, 147),
+              Colors.grey.withOpacity(0.1)
+            ],
           ),
           // boxShadow: [
           //   BoxShadow(
