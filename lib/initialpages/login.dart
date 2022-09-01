@@ -71,16 +71,16 @@ class _MyLoginState extends State<MyLogin> {
                   height: 40,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    const Text(
-                      'Sign In',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 27,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                    // const Text(
+                    //   'Sign In',
+                    //   style: TextStyle(
+                    //     color: Colors.white,
+                    //     fontSize: 27,
+                    //     fontWeight: FontWeight.w700,
+                    //   ),
+                    // ),
                     CircleAvatar(
                       radius: 30,
                       // backgroundImage: ImageProvider("/assets/nsut.jpeg"),
@@ -88,18 +88,14 @@ class _MyLoginState extends State<MyLogin> {
                       child: IconButton(
                         color: Colors.white,
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const mainhome()));
                           if (emails
                                   .contains(emailcontroller.text.toString()) &&
                               password
                                   .contains(passController.text.toString())) {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => const mainhome()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const mainhome()));
                             emailcontroller.clear();
                             passController.clear();
                           } else {
@@ -115,10 +111,10 @@ class _MyLoginState extends State<MyLogin> {
                               textColor: Colors.white,
                               fontSize: 16.0,
                             );
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => const MyRegister()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MyRegister()));
                           }
                         },
                         icon: const Icon(Icons.arrow_forward),

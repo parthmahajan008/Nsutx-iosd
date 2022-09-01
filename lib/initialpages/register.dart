@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:nsutx/data/id_pass_list.dart';
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -8,6 +10,11 @@ class MyRegister extends StatefulWidget {
 }
 
 class _MyRegisterState extends State<MyRegister> {
+  TextEditingController emailcontroller =
+      TextEditingController(); // Abstract data type constructor
+  TextEditingController passController = TextEditingController();
+
+  TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,79 +55,92 @@ class _MyRegisterState extends State<MyRegister> {
                   left: 35,
                   top: MediaQuery.of(context).size.height * 0.27),
               child: Column(children: [
-                TextField(
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: nameController,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.black),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.white),
-                    ),
+                    fillColor: Colors.grey.shade100,
+                    filled: true,
                     hintText: 'Name',
-                    hintStyle: const TextStyle(color: Colors.white),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                TextField(
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: emailcontroller,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.black),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.white),
-                    ),
+                    fillColor: Colors.grey.shade100,
+                    filled: true,
                     hintText: 'Email',
-                    hintStyle: const TextStyle(color: Colors.white),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                TextField(
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  controller: passController,
                   obscureText: true,
                   decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.black),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.white),
-                    ),
+                    fillColor: Colors.grey.shade100,
+                    filled: true,
                     hintText: 'Password',
-                    hintStyle: const TextStyle(color: Colors.white),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 40,
                 ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 27,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: const Color(0xff4c505b),
-                        child: IconButton(
-                          color: Colors.white,
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward),
-                        ),
-                      ),
-                    ]),
+                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  // const Text(
+                  //   'Sign In',
+                  //   style: TextStyle(
+                  //     color: Colors.white,
+                  //     fontSize: 27,
+                  //     fontWeight: FontWeight.w700,
+                  //   ),
+                  // ),
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundColor: const Color(0xff4c505b),
+                    child: IconButton(
+                      color: Colors.white,
+                      onPressed: () {
+                        if (emailcontroller.text.toString().contains("@") &&
+                            !emails.contains(emailcontroller.text.toString())) {
+                          setState(() {
+                            emails.add(emailcontroller.text.toString());
+                            password.add(passController.text.toString());
+                          });
+                        } else {
+                          Fluttertoast.showToast(
+                            msg: "User already Exists",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Color.fromARGB(119, 19, 23, 32),
+                            textColor: Colors.white,
+                            fontSize: 16.0,
+                          );
+                        }
+                        emailcontroller.clear();
+                        nameController.clear();
+                        passController.clear();
+                      },
+                      icon: const Icon(Icons.arrow_forward),
+                    ),
+                  ),
+                ]),
                 const SizedBox(
                   height: 40,
                 ),
