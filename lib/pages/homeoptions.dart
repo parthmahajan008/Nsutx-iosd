@@ -5,6 +5,7 @@ import 'package:nsutx/pages/prevyearpapers.dart';
 import 'package:nsutx/pages/profile.dart';
 import 'package:nsutx/widgets/homegrid.dart';
 import 'package:nsutx/widgets/iconcard.dart';
+import 'package:nsutx/widgets/todo.dart';
 import 'package:progress_indicator/progress_indicator.dart';
 
 import '../widgets/attendancepercentage.dart';
@@ -31,18 +32,21 @@ class _homemainState extends State<homemain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Card(
-              shadowColor: Colors.blue,
-              margin: const EdgeInsets.all(10),
-              elevation: 8,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: const Homegrid()),
-          const NextClass(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Card(
+                shadowColor: Colors.blue,
+                margin: const EdgeInsets.all(10),
+                elevation: 8,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: const Homegrid()),
+            const NextClass(),
+            // Container(height: 170, child: const RecentHomeworks()),
+          ],
+        ),
       ),
     );
   }
@@ -127,7 +131,7 @@ class NextClass extends StatelessWidget {
                 ],
               )
             ],
-          )
+          ),
         ],
       ),
     );
