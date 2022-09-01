@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 class RegisteredCourseswidget extends StatefulWidget {

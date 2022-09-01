@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../pages/RegisteredCourses.dart';
+import '../pages/pages with appbar/attendance.dart';
 import '../pages/pages with appbar/profilewithappbar.dart';
 import '../pages/prevyearpapers.dart';
 import '../pages/profile.dart';
@@ -48,7 +49,7 @@ class Homegrid extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
-                        pageRoute: Myprofile(),
+                        pageRoute: Myattendancewithappbar(),
                         icondata: Icons.check,
                         title: "Attendance"),
                   ),
