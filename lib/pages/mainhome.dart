@@ -190,10 +190,14 @@ class _mainhomeState extends State<mainhome>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Builder(
-        builder: (context) => IconButton(
-            icon: const Icon(Icons.settings),
+          builder: (context) => IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.black,
+            ),
             onPressed: () => Scaffold.of(context).openDrawer(),
-          ),),
+          ),
+        ),
         // Padding(
         //   padding: const EdgeInsets.only(left: 8.0),
         //   child: IconButton(
@@ -236,13 +240,13 @@ class _mainhomeState extends State<mainhome>
                   padding: const EdgeInsets.only(left: 55.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.only(bottomLeft: Radius.circular(200)),
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(200)),
                       gradient: LinearGradient(
                         colors: [
                           // Colors.blue.withOpacity(0.9),
-                          Colors.pink.withOpacity(0.3),
-                          Colors.purple.withOpacity(0.5)
+                          Color.fromARGB(255, 52, 83, 147),
+                          Colors.white.withOpacity(0.5)
                         ],
                         begin: Alignment.bottomLeft,
                         end: Alignment.topRight,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:sidebarx/sidebarx.dart';
 
 class Sidebar extends StatelessWidget {
@@ -8,15 +7,15 @@ class Sidebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final divider = Divider(color: Colors.white.withOpacity(0.3), height: 1);
+    final divider = Divider(color: Colors.white, height: 1);
     return SidebarX(
       theme: SidebarXTheme(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.45),
+          color: Colors.white.withOpacity(0.9),
           borderRadius: BorderRadius.circular(20),
         ),
-        textStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
+        textStyle: const TextStyle(color: Colors.black),
         selectedTextStyle: const TextStyle(color: Colors.white),
         itemTextPadding: const EdgeInsets.only(left: 30),
         selectedItemTextPadding: const EdgeInsets.only(left: 30),
@@ -30,17 +29,17 @@ class Sidebar extends StatelessWidget {
             color: Colors.yellow.withOpacity(0.37),
           ),
           gradient: LinearGradient(
-            colors: [Colors.blue.withOpacity(0.45), Colors.white],
+            colors: [Colors.pink, Colors.pinkAccent.withOpacity(0.6)],
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.28),
-              blurRadius: 30,
-            )
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.white.withOpacity(0.38),
+          //     blurRadius: 30,
+          //   )
+          // ],
         ),
         iconTheme: IconThemeData(
-          color: Colors.white.withOpacity(0.7),
+          color: Colors.black.withOpacity(0.7),
           size: 20,
         ),
         selectedIconTheme: const IconThemeData(
@@ -48,26 +47,42 @@ class Sidebar extends StatelessWidget {
           size: 20,
         ),
       ),
-      extendedTheme: SidebarXTheme(
+      extendedTheme: const SidebarXTheme(
         width: 200,
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.45),
+          color: Colors.white,
         ),
       ),
       footerDivider: divider,
       headerBuilder: (context, extended) {
-        return SizedBox(
-          height: 100,
+        return const SizedBox(
+          height: 200,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset('assets/images/avatar.png'),
+            padding: EdgeInsets.all(16.0),
+            child: CircleAvatar(
+              radius: 70,
+              backgroundImage: NetworkImage(
+                  "https://sangam.nsut.ac.in/adm/msc/assets/images/background.jpeg"),
+            ),
+            // Image.asset('assets/nsut.jpeg'),
           ),
         );
       },
       controller: SidebarXController(selectedIndex: 0, extended: true),
       items: const [
-        SidebarXItem(icon: Icons.home, label: 'Home'),
-        SidebarXItem(icon: Icons.search, label: 'Search'),
+        SidebarXItem(icon: Icons.person, label: 'Profile'),
+        SidebarXItem(icon: Icons.check, label: 'Attendance'),
+        SidebarXItem(icon: Icons.timeline, label: 'Time table'),
+        SidebarXItem(icon: Icons.checklist, label: 'TO DO'),
+        SidebarXItem(icon: Icons.bookmark, label: 'Notices'),
+        SidebarXItem(icon: Icons.book, label: 'Syllabus'),
+        SidebarXItem(icon: Icons.school, label: 'PYQs'),
+        SidebarXItem(icon: Icons.menu_book, label: 'Courses'),
+        SidebarXItem(icon: Icons.menu_open_rounded, label: 'Results.. scary'),
+        SidebarXItem(icon: Icons.build, label: 'Socities'),
+        SidebarXItem(icon: Icons.account_tree, label: 'Events'),
+        SidebarXItem(icon: Icons.adobe_outlined, label: 'Abouts Us'),
+        SidebarXItem(icon: Icons.question_answer, label: 'FAQs'),
       ],
     );
   }

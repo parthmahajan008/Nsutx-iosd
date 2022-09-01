@@ -1,4 +1,4 @@
-#Mon Aug 29 16:40:32 IST 2022
+#Thu Sep 01 07:22:49 IST 2022
 base.0=/Users/parthmahajan/Nsutx-iosd/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

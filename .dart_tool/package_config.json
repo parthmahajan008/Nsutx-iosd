@@ -26,6 +26,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "circular_progress_bar",
+      "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/circular_progress_bar-0.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0",
       "packageUri": "lib/",
@@ -40,6 +46,12 @@
     {
       "name": "cupertino_icons",
       "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "date_format",
+      "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/date_format-2.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -86,6 +98,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
       "packageUri": "lib/",
@@ -118,6 +136,12 @@
     {
       "name": "path",
       "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "progress_indicator",
+      "rootUri": "file:///Users/parthmahajan/flutter/.pub-cache/hosted/pub.dartlang.org/progress_indicator-0.2.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -188,7 +212,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-29T11:18:24.168332Z",
+  "generated": "2022-09-01T02:39:36.670140Z",
   "generator": "pub",
   "generatorVersion": "2.17.6"
 }

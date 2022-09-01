@@ -50,12 +50,12 @@ class _RegisteredCourseswidgetState extends State<RegisteredCourseswidget>
           height: 110,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.pinkAccent.shade100,
+            color: Colors.blue.withOpacity(0.4),
           ),
         ),
         Card(
           elevation: 5,
-          shadowColor: Colors.pink.shade500,
+          shadowColor: Colors.blue,
           child: Column(
             children: [
               Container(
@@ -291,13 +291,12 @@ class _RegisteredCourseswidgetState extends State<RegisteredCourseswidget>
                 width: double.infinity,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: Colors.pinkAccent.shade100,
+                  color: Colors.white30,
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Center(
                   child: TabBar(
                     isScrollable: true,
-                   
                     indicator: DotIndicator(
                       color: Colors.black,
                       distanceFromCenter: 16,
@@ -305,7 +304,6 @@ class _RegisteredCourseswidgetState extends State<RegisteredCourseswidget>
                       paintingStyle: PaintingStyle.fill,
                     ),
                     physics: const BouncingScrollPhysics(),
-                  
                     controller: _tabController,
                     tabs: const [
                       Tab(

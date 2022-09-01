@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nsutx/pages/RegisteredCourses.dart';
 import 'package:nsutx/pages/homeoptions.dart';
 import 'package:nsutx/pages/profile.dart';
+import 'package:nsutx/widgets/attendancepercentage.dart';
 
 class Mypages extends StatefulWidget {
   const Mypages({Key? key}) : super(key: key);
@@ -33,21 +34,7 @@ class _Mypages extends State<Mypages> {
     //   ),
     // ),
     homemain(),
-    Container(
-      decoration: BoxDecoration(
-        color: Colors.black,
-        border: Border(
-          top: BorderSide(width: 16.0, color: Colors.lightBlue.shade600),
-        ),
-        // border: Border.all(color: Colors.black.withOpacity(0.1)),
-        borderRadius: BorderRadius.circular(50),
-        // boxShadow: const [
-        //   BoxShadow(
-        //     blurRadius: 25.0,
-        //   )
-        // ],
-      ),
-    ),
+    Attendance(),
     Container(
       decoration: BoxDecoration(
         color: Colors.white,

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:nsutx/pages/RegisteredCourses.dart';
+import 'package:nsutx/pages/pages%20with%20appbar/profilewithappbar.dart';
+import 'package:nsutx/pages/prevyearpapers.dart';
+import 'package:nsutx/pages/profile.dart';
+import 'package:nsutx/widgets/homegrid.dart';
+import 'package:nsutx/widgets/iconcard.dart';
+import 'package:progress_indicator/progress_indicator.dart';
+
+import '../widgets/attendancepercentage.dart';
 
 class homemain extends StatefulWidget {
   const homemain({Key? key}) : super(key: key);
@@ -11,19 +17,25 @@ class homemain extends StatefulWidget {
 }
 
 class _homemainState extends State<homemain> {
+  final List<IconData> icondata = [
+    Icons.person,
+    Icons.present_to_all,
+    Icons.check_box
+  ];
+  final List<String> titledata = ["Profile", "Attendance", "Todo"];
+  final List<Widget> widgetdata = [
+    const Myprofile(),
+    const Myprofile(),
+    const Myprofile()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: InkWell(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) {
-                return RegisteredCoursesPage();
-              },
-            ),
-          );
-        },
+      body: Column(
+        children: const [
+          // Attendance(),
+          Homegrid(),
+        ],
       ),
     );
   }
