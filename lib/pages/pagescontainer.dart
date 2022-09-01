@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nsutx/initialpages/register.dart';
 import 'package:nsutx/pages/RegisteredCourses.dart';
 import 'package:nsutx/pages/homeoptions.dart';
 import 'package:nsutx/pages/profile.dart';
@@ -35,21 +36,7 @@ class _Mypages extends State<Mypages> {
     // ),
     homemain(),
     Attendance(),
-    Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border(
-          top: BorderSide(width: 16.0, color: Colors.lightBlue.shade600),
-        ),
-        // border: Border.all(color: Colors.black.withOpacity(0.1)),
-        borderRadius: BorderRadius.circular(50),
-        // boxShadow: const [
-        //   BoxShadow(
-        //     blurRadius: 25.0,
-        //   )
-        // ],
-      ),
-    ),
+    RegisteredCoursesPage(),
     const Myprofile(),
   ];
 
@@ -99,13 +86,13 @@ class _Mypages extends State<Mypages> {
                 // backgroundColor: Colors.red,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Business',
+                icon: Icon(Icons.check),
+                label: 'Attendance',
                 // backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
+                icon: Icon(Icons.menu_book),
+                label: 'Courses',
                 // backgroundColor: Colors.purple,
               ),
               BottomNavigationBarItem(

@@ -63,29 +63,29 @@ class _RegisteredCoursesPageState extends State<RegisteredCoursesPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Center(
-          child: Text(
-            'Registered Courses',
-            style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
-          ),
-        ),
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-            ),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   title: const Center(
+      //     child: Text(
+      //       'Registered Courses',
+      //       style: TextStyle(
+      //           fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+      //     ),
+      //   ),
+      //   leading: Padding(
+      //     padding: const EdgeInsets.only(left: 8.0),
+      //     child: IconButton(
+      //       onPressed: () {
+      //         Navigator.of(context).pop();
+      //       },
+      //       icon: const Icon(
+      //         Icons.arrow_back_ios,
+      //         color: Colors.black,
+      //       ),
+      //     ),
+      //   ),
+      // ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
         physics: BouncingScrollPhysics(),

@@ -16,8 +16,7 @@ class Iconcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 30,
-      // width: 40,
+      
       child: Column(
         children: [
           CircleAvatar(

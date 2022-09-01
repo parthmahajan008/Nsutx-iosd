@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nsutx/pages/pages%20with%20appbar/registeredcourseswithappbar.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../pages/RegisteredCourses.dart';
 import '../pages/pages with appbar/profilewithappbar.dart';
@@ -7,6 +10,14 @@ import '../pages/profile.dart';
 import 'iconcard.dart';
 
 class Homegrid extends StatelessWidget {
+  launch(String url) async {
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      throw "Could Not Launch $url";
+    }
+  }
+
   const Homegrid({Key? key}) : super(key: key);
 
   @override
@@ -38,21 +49,21 @@ class Homegrid extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
                         pageRoute: Myprofile(),
-                        icondata: Icons.present_to_all,
+                        icondata: Icons.check,
                         title: "Attendance"),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
-                        pageRoute: RegisteredCoursesPage(),
+                        pageRoute: Registered_withappbar(),
                         icondata: Icons.check_box,
                         title: "ToDo"),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
-                        pageRoute: RegisteredCoursesPage(),
-                        icondata: Icons.lock_clock,
+                        pageRoute: Registered_withappbar(),
+                        icondata: Icons.access_time,
                         title: "TimeTable"),
                   ),
                 ],
@@ -77,35 +88,68 @@ class Homegrid extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
-                        pageRoute: RegisteredCoursesPage(),
+                        pageRoute: Registered_withappbar(),
                         icondata: Icons.bar_chart,
                         title: "Result"),
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
-                        pageRoute: RegisteredCoursesPage(),
-                        icondata: Icons.notes,
+                        pageRoute: Registered_withappbar(),
+                        icondata: Icons.menu_book,
                         title: "Courses"),
                   ),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  Padding(
+                children: [
+                  const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
                         pageRoute: Myprofilewithappbar(),
                         icondata: Icons.pages,
                         title: "Societies"),
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Iconcard(
                         pageRoute: Myprofile(),
-                        icondata: Icons.calendar_month,
+                        icondata: Icons.upcoming_outlined,
                         title: "Events"),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Container(
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            // backgroundColor: Colors.blueAccent.withOpacity(0.6),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.blueGrey.withOpacity(0.7),
+                                // gradient: LinearGradient(
+                                //   colors: [
+                                //     Colors.blue.withOpacity(0.9),
+                                //     Colors.white.withOpacity(0.5)
+                                //   ],
+                                // ),
+                              ),
+                              child: IconButton(
+                                icon: const Icon(Icons.web),
+                                onPressed: () {
+                                  String url =
+                                      "https://www.imsnsit.org/imsnsit/notifications.php";
+                                  launch(url);
+                                },
+                              ),
+                            ),
+                          ),
+                          const Text("Notices")
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
