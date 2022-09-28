@@ -18,10 +18,10 @@ class _MyRegisterState extends State<MyRegister> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/images/register.png'), fit: BoxFit.cover),
-      ),
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //       image: AssetImage('assets/images/register.png'), fit: BoxFit.cover),
+      // ),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -51,8 +51,8 @@ class _MyRegisterState extends State<MyRegister> {
           SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.only(
-                  right: 35,
-                  left: 35,
+                  right: 25,
+                  left: 25,
                   top: MediaQuery.of(context).size.height * 0.27),
               child: Column(children: [
                 TextFormField(
@@ -63,7 +63,7 @@ class _MyRegisterState extends State<MyRegister> {
                     filled: true,
                     hintText: 'Name',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(18),
                     ),
                   ),
                 ),
@@ -78,7 +78,7 @@ class _MyRegisterState extends State<MyRegister> {
                     filled: true,
                     hintText: 'Email',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(18),
                     ),
                   ),
                 ),
@@ -94,7 +94,7 @@ class _MyRegisterState extends State<MyRegister> {
                     filled: true,
                     hintText: 'Password',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(18),
                     ),
                   ),
                 ),

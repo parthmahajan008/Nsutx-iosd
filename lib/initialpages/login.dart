@@ -18,10 +18,10 @@ class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/images/login3.png'), fit: BoxFit.cover),
-      ),
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //       image: AssetImage('assets/images/login3.png'), fit: BoxFit.cover),
+      // ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(children: [
@@ -35,19 +35,19 @@ class _MyLoginState extends State<MyLogin> {
           SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.only(
-                  right: 35,
-                  left: 35,
+                  right: 20,
+                  left: 20,
                   top: MediaQuery.of(context).size.height * 0.5),
               child: Column(children: [
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   controller: emailcontroller,
                   decoration: InputDecoration(
-                    fillColor: Colors.grey.shade100,
+                    fillColor: Colors.grey.shade200,
                     filled: true,
                     hintText: 'Email',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
@@ -63,7 +63,7 @@ class _MyLoginState extends State<MyLogin> {
                     filled: true,
                     hintText: 'Password',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),

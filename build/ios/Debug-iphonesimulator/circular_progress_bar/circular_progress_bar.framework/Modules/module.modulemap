@@ -1,0 +1,11 @@
+framework module circular_progress_bar {
+  umbrella header "circular_progress_bar-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module circular_progress_bar.Swift {
+    header "circular_progress_bar-Swift.h"
+    requires objc
+}
